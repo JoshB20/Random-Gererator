@@ -1,0 +1,49 @@
+# Creating a magic 8 ball
+# import random, for random generator
+import random
+
+# The messages that will print out at random
+messages = ["Try again", "Outcome looks good", "Definitely yes", "Outcome not so great", "Very doubtful", "Maybe", "No", "yes"]
+print("Please ask me a question, then select y/n for yes or no to recieve a response.")
+string = "let's get started! "
+print(string.upper())
+
+# now let's have it display the messages on repeat
+keep_asking = "true"
+while keep_asking == "true":
+    outcome_of_8ball = random.choice(messages)
+    print(outcome_of_8ball)
+    play_again = input("Re-roll? y/n: ")
+    if play_again == "y":
+        print("Re-rolling...")
+        print()
+        print()
+    elif play_again == "n":
+        print("Thank you for playing")
+        keep_asking = "false"
+    else:
+        print("I did not understand that... re-rolling")
+
+from turtle import *
+# A list of colors to randomly choose from
+colors = ["red", "blue", "green", "yellow", "orange"]
+# import randomness
+# creating a window for the graphics
+setup()
+# Will allow trutle to draw
+t1 = Turtle()
+
+# Give it the ability to move
+t1.up()
+t1.goto(-200,0)
+t1.down()
+t1.width(5)
+t1.hideturtle()
+t1.speed(30)
+
+# creating a loop for the graphics to be built
+for i in range(9001):
+    colorchoice = random.choice(colors)
+    t1.color(colorchoice)
+    t1.forward(400)
+    t1.right(185)
